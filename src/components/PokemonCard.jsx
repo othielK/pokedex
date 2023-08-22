@@ -6,9 +6,8 @@ function PokemonCard() {
         <div>
             <figure>
                 {pokemon.imgSrc === undefined ? "???" : <img src={pokemon.imgSrc} />}
+                <figcaption>{pokemon.name}</figcaption>
             </figure>
-            <h1>{pokemon.name}</h1>
-
         </div>
 
     )
