@@ -1,4 +1,4 @@
-import { useState } from "react"
+
 import PropTypes from "prop-types";
 
 // function PokemonCard({ name, imgSrc }) {
@@ -11,19 +11,13 @@ import PropTypes from "prop-types";
 // }
 
 function PokemonCard({ name, imgSrc }) {
-    const [count, setCount] = useState(0)
-    const pokemonIndex = () => {
-        setCount(count + 1)
-    }
+
 
     return (
         <>
             <div>
                 <h2>{name}</h2>
                 <img src={imgSrc} alt={name} />
-                <h3> {count}</h3>
-                <button onClick={pokemonIndex} >Next</button>
-                <button onClick={() => setCount(count - 1)}>Previous</button>
             </div>
         </>
     )
