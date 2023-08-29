@@ -1,5 +1,7 @@
+
+import React, { useState } from 'react';
+import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
-import { useState } from 'react';
 
 
 const pokemonList = [
@@ -23,6 +25,7 @@ const pokemonList = [
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
+
   {
     name: "mew",
   },
@@ -47,12 +50,12 @@ function App() {
   return (
 
     <div>
-      <button onClick={prevPokemon}>Previous</button>
-      <button onClick={nextPokemon}>Next</button>
+      <NavBar prevPokemon={prevPokemon} nextPokemon={nextPokemon} />
       <PokemonCard {...pokemonList[pokemonIndex]} />
     </div>
   );
 }
+
 
 
 // return (
