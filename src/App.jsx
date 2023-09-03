@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
+import { useEffect } from "react";
 
 
 const pokemonList = [
@@ -33,17 +34,38 @@ const pokemonList = [
 
 function App() {
 
+  useEffect(
+    () => {
+      alert("hello pokemon trainer :)")
+    },
+
+    []
+  );
   const [pokemonIndex, setPokemonIndex] = useState(0);
+
+
 
   const nextPokemon = () => {
     if (pokemonIndex < pokemonList.length - 1) {
       setPokemonIndex(pokemonIndex + 1);
+    }
+    // alert("next poke index val" + pokemonIndex)
+    // alert("next poke" + pokemonList[pokemonIndex].name)
+
+    if (pokemonList[pokemonIndex].name === "pikachu") {
+      console.log("pika pikachu!!!");
+      alert("pika pikachu")
+
     }
   };
 
   const prevPokemon = () => {
     if (pokemonIndex > 0) {
       setPokemonIndex(pokemonIndex - 1);
+    }
+    if (pokemonList[pokemonIndex].name === "pikachu") {
+      console.log("pika pikachu!!!");
+      alert("pika pikachu")
     }
   };
 
@@ -55,21 +77,6 @@ function App() {
     </div>
   );
 }
-
-
-
-// return (
-//   <div>
-//     < PokemonCard {...pokemonList[0]} />
-//     < PokemonCard {...pokemonList[1]} />
-//     < PokemonCard {...pokemonList[2]} />
-//     < PokemonCard {...pokemonList[3]} />
-
-//   </div>
-
-// )
-// }
-
 
 export default App
 
