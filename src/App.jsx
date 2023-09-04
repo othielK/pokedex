@@ -52,7 +52,7 @@ function App() {
     // alert("next poke index val" + pokemonIndex)
     // alert("next poke" + pokemonList[pokemonIndex].name)
 
-    if (pokemonList[pokemonIndex].name === "pikachu") {
+    if (pokemonList[pokemonIndex + 1].name === "pikachu") {
       console.log("pika pikachu!!!");
       alert("pika pikachu")
 
@@ -63,7 +63,7 @@ function App() {
     if (pokemonIndex > 0) {
       setPokemonIndex(pokemonIndex - 1);
     }
-    if (pokemonList[pokemonIndex].name === "pikachu") {
+    if (pokemonList[pokemonIndex - 1].name === "pikachu") {
       console.log("pika pikachu!!!");
       alert("pika pikachu")
     }
