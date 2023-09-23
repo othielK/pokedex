@@ -1,8 +1,12 @@
-export default function NavBar({ pokemonList, handleClick }) {
+export default function NavBar({ pokemonList, setPokemonIndex }) {
   return (
     <div>
       {pokemonList.map((pokemon, index) => (
-        <button key={index} onClick={() => handleClick(index)}>
+        <button
+          type="button"
+          key={index}
+          onClick={() => setPokemonIndex(index)}
+        >
           {pokemon.name}
         </button>
       ))}
