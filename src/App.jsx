@@ -1,9 +1,8 @@
-
-import React, { useState } from 'react';
-import NavBar from "./components/NavBar";
 import PokemonCard from "./components/PokemonCard";
+import React, { useState } from "react";
+import NavBar from "./components/NavBar";
 import { useEffect } from "react";
-
+import "./App.css";
 
 const pokemonList = [
   {
@@ -26,58 +25,30 @@ const pokemonList = [
     imgSrc:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
   },
-
   {
     name: "mew",
   },
 ];
 
 function App() {
+  useEffect(() => {
+    console.log("hello pokemon trainer :)");
+    alert("hello pokemon trainer :)");
+  }, []);
 
-  useEffect(
-    () => {
-      alert("hello pokemon trainer :)")
-    },
-
-    []
-  );
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-
-
-  const nextPokemon = () => {
-    if (pokemonIndex < pokemonList.length - 1) {
-      setPokemonIndex(pokemonIndex + 1);
-    }
-    // alert("next poke index val" + pokemonIndex)
-    // alert("next poke" + pokemonList[pokemonIndex].name)
-
-    if (pokemonList[pokemonIndex + 1].name === "pikachu") {
-      console.log("pika pikachu!!!");
-      alert("pika pikachu")
-
-    }
-  };
-
-  const prevPokemon = () => {
-    if (pokemonIndex > 0) {
-      setPokemonIndex(pokemonIndex - 1);
-    }
-    if (pokemonList[pokemonIndex - 1].name === "pikachu") {
-      console.log("pika pikachu!!!");
-      alert("pika pikachu")
+  const handleClick = (index) => {
+    setPokemonIndex(index);
+    if (pokemonList[index].name === "pikachu") {
+      alert("pika pikachu !!!");
     }
   };
 
   return (
-
     <div>
-      <NavBar prevPokemon={prevPokemon} nextPokemon={nextPokemon} />
       <PokemonCard {...pokemonList[pokemonIndex]} />
+      <NavBar pokemonList={pokemonList} handleClick={handleClick} />
     </div>
   );
 }
-
-export default App
-
-
